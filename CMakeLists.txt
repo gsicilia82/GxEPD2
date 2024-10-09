@@ -4,7 +4,7 @@ set(requires
 )
 
 set(sources
-    "./extras/sw_spi/src/GxEPD2_EPD.cpp"
+    #"./extras/sw_spi/src/GxEPD2_EPD.cpp"
     "./src/epd7c/GxEPD2_565c_GDEP0565D90.cpp"
     "./src/epd7c/GxEPD2_730c_GDEY073D46.cpp"
     "./src/epd7c/GxEPD2_565c.cpp"
