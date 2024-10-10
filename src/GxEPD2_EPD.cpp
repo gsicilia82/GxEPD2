@@ -148,7 +148,7 @@ void GxEPD2_EPD::_waitWhileBusy(const char* comment, uint16_t busy_time)
       if (digitalRead(_busy) != _busy_level) break;
       if (micros() - start > _busy_timeout)
       {
-        Serial.println("Busy Timeout!");
+        ESP_LOGD("GxEPD2", "Busy Timeout!");
         break;
       }
 #if defined(ESP8266) || defined(ESP32)
@@ -161,9 +161,7 @@ void GxEPD2_EPD::_waitWhileBusy(const char* comment, uint16_t busy_time)
       if (_diag_enabled)
       {
         unsigned long elapsed = micros() - start;
-        Serial.print(comment);
-        Serial.print(" : ");
-        Serial.println(elapsed);
+        ESP_LOGD("GxEPD2", "%s : %lu", comment, elapsed);
       }
 #endif
     }
